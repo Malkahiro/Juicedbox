@@ -10,7 +10,8 @@ const {
     getPostsByUser,
     createTags,
     addTagsToPost,
-    getPostsByTagName
+    getPostsByTagName,
+    getAllTags
   } = require('./index');
 
   const dropTables = async () => {
@@ -212,6 +213,10 @@ const {
     console.log("Calling getPostsByTagName with #happy");
     const postsWithHappy = await getPostsByTagName("#happy");
     console.log("Result:", postsWithHappy);
+
+    console.log("Getting all the Tags");
+    const gettingTags = await getAllTags();
+    console.log("Got the tags", gettingTags);
   
       console.log("Finished database tests!");
     } catch (error) {
